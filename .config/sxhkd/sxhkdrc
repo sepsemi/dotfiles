@@ -31,7 +31,6 @@ super + {KP_Home, KP_Left, KP_End}
 super + KP_Insert
     $HOME/.local/bin/controllers/volume_ctl --application Chromium --togmute &; $HOME/.local/bin/controllers/volume_ctl --input --togmute &
 
-
 #---Application Launchers---#
 # Launch rofi
 super + grave
@@ -41,11 +40,27 @@ super + grave
 alt + grave
     dmenu_run
 
-# Spawn Terminal emulator
-super + Return
-    urxvt -geometry 100x20+400+400
+# Launch Firefox with profiles
+super + {_, shift} + w
+    {firefox -p default-release, firefox -p arkenfox}
 
-#---System Controll--#
+# Launch thunar or dolphin
+super + {_, shift} + f
+    {thunar, dolphin}
+
+# Launch sublime or vscode
+super + {_, shift} + e
+    {subl || subl3 || /opt/sublime_text_3/sublime_text, code}
+
+# Launch pulse audio controll or alsamixer
+super + {_, shift} + v
+    {pavucontrol, alsamixer}
+
+# Launch htop or, process viewer
+super + {_, shift} + s
+    {urxvt -geometry 100x20+400+400 -e htop --tree}
+
+#---System Controll---#
 # Restart hotkey daemon
 super + shift + r
     notify-send -t 1 "sxhkd restarted daemon" && killall -KILL sxhkd; sxhkd </dev/null >/dev/null 2>&1 &
