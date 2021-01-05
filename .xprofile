@@ -1,0 +1,21 @@
+#!/bin/sh
+
+function start_appication_base {
+    xcompmgr &
+    unclutter --timeout 3 --fork
+    sxhkd &
+    xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/Xresources &
+}
+
+if [ $# == 0 ]; then
+    echo 3.5 > /tmp/libinput_discrete_deltay_multiplier
+    nitrogen --restore &
+    $HOME/.config/.screenlayout/default.sh
+    exec dwm
+elif [ "$1" == "start" ]; then
+     echo 3.5 > /tmp/libinput_discrete_deltay_multiplier
+     start_appication_base
+fi
+
+# Set walpapers after
+# nitrogen --restore &

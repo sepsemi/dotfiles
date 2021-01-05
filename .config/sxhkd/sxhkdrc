@@ -1,0 +1,75 @@
+#---Application Launchers---#
+# Launch rofi
+super + grave
+    rofi -modi 'drun,run' -show drun -show-icons -markup -theme Monokai -rofi -lines 10 rofi rofi -width 55 -auto-select -async-pre-read 25 -case-sensitive &
+
+# Lauch dmenu_run
+alt + grave
+    dmenu_run
+
+# Spawn Terminal emulator
+super + Return
+    urxvt -geometry 100x20+400+400
+
+#Controlls Volume for Output
+super + {KP_Subtract, KP_Add, KP_Enter}
+    $HOME/.local/bin/controllers/volume_ctl --output {--down,--up,--togmute}
+
+#Controlls Volume For Chromium Individually
+super + {KP_Prior, KP_Right, KP_Next}
+    $HOME/.local/bin/controllers/volume_ctl --application Chromium {--down,--up,--togmute}
+
+#Controlls Volume for Firefox Individually
+super + {KP_Up, KP_Begin , KP_Down}
+    $HOME/.local/bin/controllers/volume_ctl --application Firefox {--down,--up,--togmute}
+
+#Controlls volume for Microphone
+super + {KP_Home, KP_Left, KP_End}
+    $HOME/.local/bin/controllers/volume_ctl --input {--down,--up,--togmute}
+
+#Mute Mic And Output Chromium
+super + KP_Insert
+    $HOME/.local/bin/controllers/volume_ctl --application Chromium --togmute &; $HOME/.local/bin/controllers/volume_ctl --input --togmute &
+
+
+#---Application Launchers---#
+# Launch rofi
+super + grave
+    rofi -modi 'drun,run' -show drun -show-icons -markup -theme Monokai -rofi -lines 10 rofi rofi -width 55 -auto-select -async-pre-read 25 -case-sensitive &
+
+# Lauch dmenu_run
+alt + grave
+    dmenu_run
+
+# Spawn Terminal emulator
+super + Return
+    urxvt -geometry 100x20+400+400
+
+#---System Controll--#
+# Restart hotkey daemon
+super + shift + r
+    notify-send -t 1 "sxhkd restarted daemon" && killall -KILL sxhkd; sxhkd </dev/null >/dev/null 2>&1 &
+
+#Power Controll
+super + shift + x
+    $HOME/.local/bin/controllers/power_ctl
+
+#Display Selector
+super + F3
+    $HOME/.local/bin/controllers/display_select &
+
+# Window Switcher
+#ctrl + Tab
+#    rofi -show window -theme Monokai -lines 10 -width 70 -show-icons -matching glob -async-pre-read 25 -auto-select -m -5 &
+
+# Minimize All Windows or Current window
+super + Escape
+    $HOME/.local/bin/controllers/minimize_show_windows
+
+
+#Switch to or Open file manager or Open Sublime
+super {s, f}
+    $HOME/.local/bin/controllers/task_switcher { 'sublime_text.sublime-text-3' subl3, 'Thunar' thunar}
+
+ctrl + alt + l
+    slock
