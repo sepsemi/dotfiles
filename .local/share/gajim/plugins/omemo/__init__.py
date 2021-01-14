@@ -1,0 +1,1 @@
+from omemoplugin import OmemoPlugin

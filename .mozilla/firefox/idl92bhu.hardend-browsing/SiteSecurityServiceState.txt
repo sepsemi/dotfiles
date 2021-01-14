@@ -1,0 +1,7 @@
+classify-client.services.mozilla.com:HSTS	0	18637	1641841580615,1,0,2
+firefox.settings.services.mozilla.com:HSTS	4	18641	1642202904226,1,0,2
+services.addons.mozilla.org:HSTS	2	18640	1642107735263,1,0,2
+versioncheck-bg.addons.mozilla.org:HSTS	1	18640	1610572035597,1,0,2
+shavar.services.mozilla.com^firstPartyDomain=safebrowsing.86868755-6b82-4842-b301-72671a0db32e.mozilla:HSTS	3	18641	1642202904507,1,1,2
+normandy.cdn.mozilla.net:HSTS	0	18637	1641841580414,1,0,2
+aus5.mozilla.org:HSTS	1	18640	1642107845771,1,0,2

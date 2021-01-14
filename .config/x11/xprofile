@@ -1,0 +1,8 @@
+#!/bin/sh
+
+xrdb /home/user/.config/x11/Xresources
+sxhkd  &
+unclutter -idle 3 &
+
+# disable capslock
+/usr/bin/setxkbmap -option '' -option 'ctrl:nocaps'

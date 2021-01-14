@@ -1,0 +1,25 @@
+#!/bin/sh
+
+function get_state {
+    file="$HOME/.local/bin/controllers/session_cust"
+
+    while read line; do
+        if [[ $line =~ 'minimize_show_windows=0' ]] ; then
+            sed -i 's/minimize_show_windows=0/minimize_show_windows=1/' $file
+            echo 0
+        else
+            sed -i 's/minimize_show_windows=1/minimize_show_windows=0/' $file
+            echo 1
+        fi
+    done < $file
+}
+
+function main {
+    local state=$(get_state)
+    if [ $state = 1 ]; then
+        wmctrl -k on
+    else
+        wmctrl -k off
+    fi
+}
+main
