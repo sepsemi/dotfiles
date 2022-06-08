@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Gets a webapp from $HOME/.local/share/applications/chrome-*
+
+# Iterate over all chrome shortcuts
+#for file in $HOME/.local/share/applications/*/; do
+	#sed -n "/^Name/p" $file | sed 's/.*=//' | tr '[A-Z]' '[a-z]'
+#	echo -e "$file\n"
+
+#done
+
+# Get last string after last "/"
+called_application="${0##*/}"
+
+# Iterate over all files that begin with chrome-
+for file in $HOME/.local/share/applications/chrome-*; do 
+	name="$(sed -n 's/Name=//p' $file | tr '[A-Z]' '[a-z]')"
+	# Replace space with "-"
+	cleaned_name="${name// /-}"
+
+	if [[ $cleaned_name == *"$called_application"* ]]; then
+		# If a match if found search for the exec string
+		
+		exec_string=$(sed -n 's/Exec=//p' $file)
+		echo $exec_string
+		eval $exec_string
+
+		break
+
+	fi
+
+
+done
+
+

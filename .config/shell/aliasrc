@@ -1,0 +1,10 @@
+#!/bin/sh
+
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	l="ls -lh --color=auto" \
+
+alias \
+	e="$EDITOR" \
+	g="git" \
+	update="sudo apt update && sudo apt upgrade && sudo apt clean && sudo apt autoremove"

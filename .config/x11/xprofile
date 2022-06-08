@@ -1,0 +1,12 @@
+#!/bin/sh
+
+xrdb /home/user/.config/x11/Xresources &
+sxhkd  &
+picom &
+
+# disable capslock
+/usr/bin/setxkbmap -option '' -option 'ctrl:nocaps' &
+
+# Set x key repeat
+xset r rate 225 55 &
+
