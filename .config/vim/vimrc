@@ -3,6 +3,7 @@ set shiftwidth=4
 
 " Autoindent if filetype supports it
 set smartindent
+set autoindent
 
 set nowrap
 
@@ -13,3 +14,25 @@ set number
 set cursorcolumn 
 " Set vertical line
 set cursorline 
+
+" Improve search
+set hlsearch
+set incsearch
+
+syntax on
+colorscheme pablo
+
+map ; :
+
+" Change split
+set splitbelow splitright
+" Newtab
+nnoremap <silent> <C-t> :tabnew<CR>
+" Switch between tabs
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+" Disable arrow keys in all modes
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
