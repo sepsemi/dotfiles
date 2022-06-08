@@ -1,0 +1,15 @@
+" Transform 8 tab's into 4 wide tabs
+set shiftwidth=4
+
+" Autoindent if filetype supports it
+set smartindent
+
+set nowrap
+
+" Show numbers in gutter
+set number
+
+" Set horizontal line
+set cursorcolumn 
+" Set vertical line
+set cursorline 
