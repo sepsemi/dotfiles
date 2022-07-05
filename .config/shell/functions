@@ -3,9 +3,14 @@
 v () {
     if [ $# == 0 ]; then
         # Execute fzf + vim
-        vim -p $(fzf --multi)
+	# Check if batcat is installed
+	if [ -x "$(command -v batcat)" ]; then
+	    vim -p $(fzf --multi --preview 'batcat --style=numbers --color=always --line-range :500 {}' --bind shift-up:preview-page-up,shift-down:preview-page-down)
+	else
+    	    vim -p $(fzf --multi --preview 'less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down)
+	fi
     else
         vim -p $@
     fi
 }
-
+    
