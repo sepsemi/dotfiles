@@ -33,3 +33,6 @@ fi
 
 # Set the PS1 prompt
 export PS1="\[\033[38;5;202m\][\w\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')] \[$(tput sgr0)\]"
+
+
+
