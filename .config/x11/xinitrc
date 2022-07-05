@@ -7,4 +7,5 @@ else
 fi
 
 # While this is a bad implementation its all we got
-dbus-launch --sh-syntax --exit-with-session bspwm
+#dbus-launch --sh-syntax --exit-with-session bspwm
+exec bspwm

@@ -10,3 +10,5 @@ picom &
 # Set x key repeat
 xset r rate 225 55 &
 
+# Set walpaper
+nitrogen --restore &

@@ -7,4 +7,7 @@ alias \
 alias \
 	e="$EDITOR" \
 	g="git" \
-	update="sudo apt update && sudo apt upgrade && sudo apt clean && sudo apt autoremove"
+	update="sudo apt update && sudo apt upgrade && sudo apt clean && sudo apt autoremove" \
+
+alias \
+	fe='vim -p $(fzf --multi)' \

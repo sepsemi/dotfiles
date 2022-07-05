@@ -6,6 +6,15 @@
 super + Return
 	st
 
+# Lock screen
+super + l
+	slock
+
+# Launch firefox
+super + shift + w
+	exec firefox 
+
+
 # program launcher
 super + @space
 	dmenu_run

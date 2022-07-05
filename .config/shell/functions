@@ -1,0 +1,11 @@
+#!/bin/bash
+
+v () {
+    if [ $# == 0 ]; then
+        # Execute fzf + vim
+        vim -p $(fzf --multi)
+    else
+        vim -p $@
+    fi
+}
+
